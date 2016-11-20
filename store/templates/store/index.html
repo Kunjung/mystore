@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>Kunjung's Store </title>
+	</head>
+	<body>
+		<h1> Welcome to My Store </h1>
+		{% for category in categories %}
+			<h1> {{ category.name }} </h1>
+			<ol>
+			{% for product in category.product_set.all %}
+				<li>
+				<a href="product/{{ product.id }}"> {{ product.name }} </a>
+				</li>
+			{% endfor %}
+			</ol>
+		{% endfor %}
+	</body>
+</html>
