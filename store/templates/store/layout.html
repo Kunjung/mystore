@@ -1,0 +1,47 @@
+<html>
+	<head>
+		<title>Kunjung's Store </title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	</head>
+	<body>
+
+		<!-- Navigation -->
+		<nav class="navbar navbar-inverse">
+  			<div class="container-fluid">
+    			<div class="navbar-header">
+    			<a class="navbar-brand" href="#">K's Store</a>
+    			</div>
+				<ul class="nav navbar-nav">
+    				<li><a href="{% url 'index' %}">Home</a></li>
+     				<li><a href="#">About K's Store</a></li> 
+     				<li><a href="{% url 'contact' %}">Contact</a></li> 
+    			</ul>
+
+    			<form class="navbar-form navbar-right" action="/search/">
+      				<div class="form-group">
+        				<input name="q" type="text" class="form-control" placeholder="What are you looking for...">
+      				</div>
+      				<button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"></span> Search </button>
+    			</form>
+
+ 			</div>
+		</nav>
+
+		<div class="container">
+			<div class="jumbotron">
+				<h1 style="text-align:center"> Welcome to K's Store </h1>
+		
+				<h4 style="text-align:center"> "where it's easy to buy things online" </h4>
+			</div>
+
+
+		</div>
+
+
+
+		
+		{% block content %}
+		{% endblock %}
+		
+	</body>
+</html>

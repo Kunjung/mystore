@@ -1,0 +1,27 @@
+{% extends "store/layout.html" %}
+
+{% block content %}
+
+		<div class="container">
+
+		<h3> <div class="label label-default">About {{ products|length }} results</div> </h3>
+
+		<hr>
+
+		<ul>
+		{% if not products  %}
+		
+			<h4>Item not Available</h4>
+
+		{% else %}
+		
+		{% for product in products %}
+			<li> <a href="/product/{{product.id}}"><h4> {{ product.name }} </h4> </a> </li>
+		{% endfor %}
+		</ul>
+		
+		{% endif %}
+
+		</div>
+
+{% endblock %}

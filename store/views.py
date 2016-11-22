@@ -13,3 +13,16 @@ def product(request, id):
 		'product': Product.objects.get(id=id)
 	}
 	return render(request, 'store/product.html', context)
+
+def search(request):
+	search_item = request.GET.get('q')
+
+	products = Product.objects.filter(name__contains=search_item)
+
+	
+	return render(request, 'store/search.html', { 'products': products })
+
+
+
+def contact(request):
+	return render(request, 'store/contact.html')
